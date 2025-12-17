@@ -42,11 +42,7 @@ echo [INFO] Нормализация шаблона прогнозов...
 if errorlevel 1 goto :fail
 
 echo [INFO] Импорт прогнозов пользователей...
-%PYTHON_CMD% scripts\import_text_predictions.py ^
-"%RAW_PREDICTIONS%" ^
-"%RESULTS_CSV%" ^
-"%PREDICTIONS_CSV%" ^
---clear-users
+%PYTHON_CMD% scripts\import_text_predictions.py "%RAW_PREDICTIONS%" "%RESULTS_CSV%" "%PREDICTIONS_CSV%" --clear-users
 if errorlevel 1 goto :fail
 
 echo [INFO] Пересчет турнирной таблицы...
